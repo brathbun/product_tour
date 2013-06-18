@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Burst Media Product Tour</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <link rel="stylesheet" href="css/style.css?v=1.0">
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jquery.mixitup.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+	    $('#burstProducts').mixitup();
+	});
+</script>
+
+</head>
+<body>
+
+<div id="filters">
+	
+	<ul>
+	    <li class="filter" data-filter="display">Display</li>
+	    <li class="filter" data-filter="mobile">Mobile</li>
+	    <li class="filter" data-filter="video">Video</li>
+	    <li class="filter" data-filter="GR">Giant Realm</li>
+	    <li class="filter" data-filter="MomIQ">MomIQ</li>
+	    <li class="filter" data-filter="Ella">Ella</li>
+	</ul>
+
+</div>
+
+<br /><br />
+
+<div id="productWrapper">
+	<ul id="burstProducts">
+		<li class="mix display GR" data-feature="video" data-type="FixedFooter">GR Fixed Footer</li>
+		<li class="mix display MomIQ" data-feature="social" data-type="FixedFooter">MomIQ Social Influencer FF</li>
+		<li class="mix display Ella" data-feature="social" data-type="Float">Ella Float/Overlay</li>
+		<li class="mix mobile MomIQ" data-feature="social" data-type="Float">MomIQ Mobile Overlay</li>
+		<li class="mix display Ella" data-feature="social" data-feature="video" data-type="Peelback">Ella Peelback</li>
+		<li class="mix display GR" data-feature="social" data-feature="video" data-type="TopHat">GR Top Hat</li>
+		<li class="mix display MomIQ" data-feature="social" data-feature="video" data-type="Expandable">MomIQ Expandable</li>
+		<li class="mix display MomIQ" data-feature="social" data-feature="video" data-type="Skin">MomIQ Skin</li>
+		<li class="mix display Ella" data-feature="social" data-feature="video" data-type="Skin">Ella Toggle Skin</li>
+		<li class="mix display GR" data-feature="social" data-feature="video" data-type="Skin">GR Sequential Skin</li>
+		<li class="mix mobile GR" data-feature="social" data-feature="storelocator" data-type="Sidewalk">GR Sidewalk Unit</li>
+		<li class="mix video GR" data-feature="social" data-type="Preroll">GR Preroll Unit</li>
+		<li class="mix video MomIQ" data-feature="social" data-type="Overlay">MomIQ Video Overlay</li>
+	</ul>
+</div>
+
+</body>
+</html>
