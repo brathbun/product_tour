@@ -14,7 +14,60 @@
 
 <script type="text/javascript">
 	$(function(){
-	    $('#burstProducts').mixitup();
+	    $('#burstProducts').mixitup({
+	    	effects: ['fade','blur','scale','rotateX'],
+	    	transitionSpeed: 300,
+	    });
+
+	    // HANDLE MULTI-DIMENSIONAL CHECKBOX FILTERING
+
+	    var $filters = $('#filters').find('li');
+	    var filterString = 'all';
+
+	    // Bind checkbox click handlers:
+
+	    $filters.on('click', function () {
+	        var $t = $(this),
+	        filter = $t.attr('data-filter');
+
+	        if (filter == 'all') {
+	            // If "all"
+	            if (!$t.hasClass('active')) {
+	                // if unchecked, check "all" and uncheck all other active filters
+	                $t.addClass('active').siblings().removeClass('active');
+	                // Replace entire string with "all"
+	                filterString = 'all';
+	            }
+	        } else {
+	            // Else, uncheck "all"
+	            $t.siblings('[data-filter="all"]').removeClass('active');
+	            // Remove "all" from string
+	            filterString = filterString.replace('all', '');
+
+	            if (!$t.hasClass('active')) {
+	                // Check checkbox
+	                $t.addClass('active');
+	                // Append filter to string
+	                filterString = filterString == '' ? filter : filterString + ' ' + filter;
+	            } else {
+	                // Uncheck
+	                $t.removeClass('active');
+	                // Remove filter and preceeding space from string with RegEx
+	                var re = new RegExp('(\\s|^)' + filter);
+	                filterString = filterString.replace(re, '');
+	            };
+	        };
+
+	        // Reset to all if none are active
+	        if ($filters.filter('.active').size() == 0) {
+	            $filters.filter('[data-filter="all"]').addClass('active');
+	            filterString = 'all';
+	        }
+
+	        $('#burstProducts').mixitup('filter', [filterString])
+	    });
+
+
 	});
 </script>
 
@@ -23,14 +76,54 @@
 
 <div id="filters">
 	
-	<ul>
-	    <li class="filter" data-filter="display">Display</li>
-	    <li class="filter" data-filter="mobile">Mobile</li>
-	    <li class="filter" data-filter="video">Video</li>
-	    <li class="filter" data-filter="GR">Giant Realm</li>
-	    <li class="filter" data-filter="MomIQ">MomIQ</li>
-	    <li class="filter" data-filter="Ella">Ella</li>
-	</ul>
+	<div class="filterChannel">
+		
+        <div class="menu">
+            <p class="menuheader">By Type</p>
+            <ul>
+	            <li class="filter item" data-filter="display">Display</li>
+			    <li class="filter item" data-filter="mobile">Mobile</li>
+			    <li class="filter item" data-filter="video">Video</li>
+            </ul>
+        </div>
+
+        <div class="menu">
+            <p class="menuheader">By Channel</p>
+            <ul>
+	            <li class="filter item" data-filter="gr">Giant Realm</li>
+			    <li class="filter item" data-filter="momiq">Momiq</li>
+			    <li class="filter item" data-filter="video">Ella</li>
+            </ul>
+        </div>
+
+        <div class="menu">
+            <p class="menuheader">By Feature</p>
+            <ul>
+	            <li class="filter item" data-filter="social">Social</li>
+			    <li class="filter item" data-filter="featurevideo">Video</li>
+			    <li class="filter item" data-filter="animation">Animation</li>
+			    <li class="filter item" data-filter="cta">Multiple CTA</li>
+			    <li class="filter item" data-filter="sponsoredcontent">Sponsored Content</li>
+            </ul>
+        </div>
+
+        <div class="menu">
+            <p class="menuheader">By Product Type</p>
+            <ul>
+	            <li class="filter item" data-filter="peelback">Peelback</li>
+			    <li class="filter item" data-filter="sidewalk">Sidewalk</li>
+			    <li class="filter item" data-filter="skin">Skin/Wallpaper</li>
+			    <li class="filter item" data-filter="expandable">Expandable</li>
+			    <li class="filter item" data-filter="float">Float/Overlay</li>
+			    <li class="filter item" data-filter="interstitial">Interstitial</li>
+			    <li class="filter item" data-filter="fixedfooter">Fixed Footer</li>
+			    <li class="filter item" data-filter="tophat">Top Hat Unit</li>
+            </ul>
+        </div>
+
+		<div class="clearFix"></div>
+
+	</div>
 
 </div>
 
@@ -38,19 +131,19 @@
 
 <div id="productWrapper">
 	<ul id="burstProducts">
-		<li class="mix display GR" data-feature="video" data-type="FixedFooter">GR Fixed Footer</li>
-		<li class="mix display MomIQ" data-feature="social" data-type="FixedFooter">MomIQ Social Influencer FF</li>
-		<li class="mix display Ella" data-feature="social" data-type="Float">Ella Float/Overlay</li>
-		<li class="mix mobile MomIQ" data-feature="social" data-type="Float">MomIQ Mobile Overlay</li>
-		<li class="mix display Ella" data-feature="social" data-feature="video" data-type="Peelback">Ella Peelback</li>
-		<li class="mix display GR" data-feature="social" data-feature="video" data-type="TopHat">GR Top Hat</li>
-		<li class="mix display MomIQ" data-feature="social" data-feature="video" data-type="Expandable">MomIQ Expandable</li>
-		<li class="mix display MomIQ" data-feature="social" data-feature="video" data-type="Skin">MomIQ Skin</li>
-		<li class="mix display Ella" data-feature="social" data-feature="video" data-type="Skin">Ella Toggle Skin</li>
-		<li class="mix display GR" data-feature="social" data-feature="video" data-type="Skin">GR Sequential Skin</li>
-		<li class="mix mobile GR" data-feature="social" data-feature="storelocator" data-type="Sidewalk">GR Sidewalk Unit</li>
-		<li class="mix video GR" data-feature="social" data-type="Preroll">GR Preroll Unit</li>
-		<li class="mix video MomIQ" data-feature="social" data-type="Overlay">MomIQ Video Overlay</li>
+		<li class="mix display gr social fixedfooter" data-feature="video" data-type="FixedFooter">gr Fixed Footer</li>
+		<li class="mix display momiq featurevideo sponsoredcontent" data-feature="social" data-type="FixedFooter">momiq Social Influencer FF</li>
+		<li class="mix display ella animation float" data-feature="social" data-type="Float">ella Float/Overlay</li>
+		<li class="mix mobile momiq animation float" data-feature="social" data-type="Float">momiq Mobile Overlay</li>
+		<li class="mix display ella featurevideo peelback" data-feature="social" data-feature="video" data-type="Peelback">ella Peelback</li>
+		<li class="mix display gr cta tophat" data-feature="social" data-feature="video" data-type="TopHat">gr Top Hat</li>
+		<li class="mix display momiq expandable" data-feature="social" data-feature="video" data-type="Expandable">momiq Expandable</li>
+		<li class="mix display momiq cta skin" data-feature="social" data-feature="video" data-type="Skin">momiq Skin</li>
+		<li class="mix display ella skin" data-feature="social" data-feature="video" data-type="Skin">ella Toggle Skin</li>
+		<li class="mix display gr sponsoredcontent skin" data-feature="social" data-feature="video" data-type="Skin">gr Sequential Skin</li>
+		<li class="mix mobile gr featurevideo sidewalk" data-feature="social" data-feature="storelocator" data-type="Sidewalk">gr Sidewalk Unit</li>
+		<li class="mix video gr featurevideo animation" data-feature="social" data-type="Preroll">gr Preroll Unit</li>
+		<li class="mix video momiq" data-feature="social" data-type="Overlay">momiq Video Overlay</li>
 	</ul>
 </div>
 
