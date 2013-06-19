@@ -1,151 +1,240 @@
-<!doctype html>
-<html lang="en">
+<!doctype html>  
+ 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Burst Media Product Tour</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-  <link rel="stylesheet" href="css/style.css?v=1.0">
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="js/jquery.mixitup.min.js"></script>
+  <title>Burst Product Tour</title>
+ 
 
-<script type="text/javascript">
-	$(function(){
-	    $('#burstProducts').mixitup({
-	    	effects: ['fade','blur','scale','rotateX'],
-	    	transitionSpeed: 300,
-	    });
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	    // HANDLE MULTI-DIMENSIONAL CHECKBOX FILTERING
-
-	    var $filters = $('#filters').find('li');
-	    var filterString = 'all';
-
-	    // Bind checkbox click handlers:
-
-	    $filters.on('click', function () {
-	        var $t = $(this),
-	        filter = $t.attr('data-filter');
-
-	        if (filter == 'all') {
-	            // If "all"
-	            if (!$t.hasClass('active')) {
-	                // if unchecked, check "all" and uncheck all other active filters
-	                $t.addClass('active').siblings().removeClass('active');
-	                // Replace entire string with "all"
-	                filterString = 'all';
-	            }
-	        } else {
-	            // Else, uncheck "all"
-	            $t.siblings('[data-filter="all"]').removeClass('active');
-	            // Remove "all" from string
-	            filterString = filterString.replace('all', '');
-
-	            if (!$t.hasClass('active')) {
-	                // Check checkbox
-	                $t.addClass('active');
-	                // Append filter to string
-	                filterString = filterString == '' ? filter : filterString + ' ' + filter;
-	            } else {
-	                // Uncheck
-	                $t.removeClass('active');
-	                // Remove filter and preceeding space from string with RegEx
-	                var re = new RegExp('(\\s|^)' + filter);
-	                filterString = filterString.replace(re, '');
-	            };
-	        };
-
-	        // Reset to all if none are active
-	        if ($filters.filter('.active').size() == 0) {
-	            $filters.filter('[data-filter="all"]').addClass('active');
-	            filterString = 'all';
-	        }
-
-	        $('#burstProducts').mixitup('filter', [filterString])
-	    });
+  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 
-	});
-</script>
+  <!-- CSS : implied media="all" -->
+  <link rel="stylesheet" href="css/style.css?v=2">
+  
+  
+  <link href='http://fonts.googleapis.com/css?family=Lora&v2' rel='stylesheet' type='text/css'>
 
-</head>
+  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
+ <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
+ 
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="../js/modernizr-2.6.2.min.js"></script>
+ 
+
+ 
+  </head>
+
 <body>
+<div id="container" class="entry">
+   
 
-<div id="filters">
-	
-	<div class="filterChannel">
-		
-        <div class="menu">
-            <p class="menuheader">By Type</p>
-            <ul>
-	            <li class="filter item" data-filter="display">Display</li>
-			    <li class="filter item" data-filter="mobile">Mobile</li>
-			    <li class="filter item" data-filter="video">Video</li>
-            </ul>
+    <div id="main">
+        <div class="gradup">
+            <div class="onethird plus right">
+
+                <h3>Refine your Search</h3>
+                <ul class="filters showall">
+                    <li><input type="checkbox" id="filterIDall" value="all" class="dynamicFilterInput"><label for="filterIDall">All</label></li>
+                </ul>
+
+        <h5>Channel</h5>
+
+        <ul class="filters">
+          <li><input type="checkbox" id="filterIDmomiq" value="momiq" class="dynamicFilterInput"><label for="filterIDmomiq">MomIQ</label></li>
+          <li><input type="checkbox" id="filterIDella" value="ella" class="dynamicFilterInput"><label for="filterIDella">Ella</label></li>
+          <li><input type="checkbox" id="filterIDgiantrealm" value="giantrealm" class="dynamicFilterInput"><label for="filterIDgiantrealm">Giant Realm</label></li>
+          <li><input type="checkbox" id="filterIDstadium" value="stadium" class="dynamicFilterInput"><label for="filterIDstadium">Stadium</label></li>
+        </ul>
+
+        <h5>Medium</h5>
+
+        <ul class="filters">
+          <li><input type="checkbox" id="filterIDdisplay" value="display" class="dynamicFilterInput"><label for="filterIDdisplay">Display</label></li>
+          <li><input type="checkbox" id="filterIDmobile" value="mobile" class="dynamicFilterInput"><label for="filterIDmobile">Mobile</label></li>
+          <li><input type="checkbox" id="filterIDvideo" value="video" class="dynamicFilterInput"><label for="filterIDvideo">Video</label></li>
+        </ul>
+
+        <h5>Product Type</h5>
+        
+        <ul class="filters">
+          <li><input type="checkbox" id="filterIDfixedfooter" value="fixedfooter" class="dynamicFilterInput"><label for="filterIDfixedfooter">Fixed Footer</label></li>
+          <li><input type="checkbox" id="filterIDfloatoverlay" value="floatoverlay" class="dynamicFilterInput"><label for="filterIDfloatoverlay">Float/Overlay</label></li>
+          <li><input type="checkbox" id="filterIDpeelback" value="peelback" class="dynamicFilterInput"><label for="filterIDpeelback">Peelback</label></li>
+          <li><input type="checkbox" id="filterIDexpandable" value="expandable" class="dynamicFilterInput"><label for="filterIDexpandable">Expandable</label></li>
+          <li><input type="checkbox" id="filterIDtophat" value="tophat" class="dynamicFilterInput"><label for="filterIDtophat">Top Hat</label></li>
+          <li><input type="checkbox" id="filterIDinterstitial" value="interstitial" class="dynamicFilterInput"><label for="filterIDinterstitial">Interstitial</label></li>
+          <li><input type="checkbox" id="filterIDsidewalk" value="sidewalk" class="dynamicFilterInput"><label for="filterIDsidewalk">Sidewalk</label></li>
+          <li><input type="checkbox" id="filterIDskin" value="skin" class="dynamicFilterInput"><label for="filterIDskin">Skin/Wallpaper</label></li>
+          <li><input type="checkbox" id="filterIDsequential" value="sequential" class="dynamicFilterInput"><label for="filterIDsequential">Sequential Skin/Wallpaper</label></li>
+          <li><input type="checkbox" id="filterIDtoggle" value="toggle" class="dynamicFilterInput"><label for="filterIDtoggle">Toggle Skin/Wallpaper</label></li>
+          <li><input type="checkbox" id="filterIDvideooverlay" value="videooverlay" class="dynamicFilterInput"><label for="filterIDvideooverlay">Video Overlay</label></li>
+          <li><input type="checkbox" id="filterIDpreroll" value="preroll" class="dynamicFilterInput"><label for="filterIDpreroll">Pre-roll Video</label></li>
+        </ul>
+
+                <div class="filterThis"></div>
+            </div>
+
+            <div class="twothird plus left">
+                <h2>Burst Executions</h2>
+         
+
+                <div id="post-12" class="post-12 page type-page status-publish hentry">
+                    <div class="entry-made played">
+                        <p>Oh no!  You've filtered too much!</p>
+                    </div>
+                </div>
+                                       
+                <div class="entry-made">
+                
+                <!-- Initial Displays -->               
+        
+                    <ul id="holder-init" class="filterThis showThis">
+                        <li class=" momiq display fixedfooter">
+                            <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
+
+                            <div class="caption">
+                                <h3><a href="burstmedia.com">MomIQ Fixed Footer</a></h3>
+                            </div>
+                        </li>
+
+                        <li class=" giantrealm mobile fixedfooter">
+                            <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
+
+                            <div class="caption">
+                                <h3><a href="burstmedia.com">Giant Realm Fixed Footer</a></h3>
+                            </div>
+                        </li>
+
+                        <li class=" ella video preroll">
+                            <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
+
+                            <div class="caption">
+                                <h3><a href="burstmedia.com">Ella Preroll</a></h3>
+                            </div>
+                        </li>
+
+                    </ul>  
+                </div>
+            <!-- End Initial Display -->
+
+            <div id="holderwrap">
+
+                <ul id="holder" class="filterThis">
+                    
+                    <li class=" momiq display fixedfooter">
+                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
+
+                        <div class="caption">
+                            <h3><a href="burstmedia.com">MomIQ Display Fixed Footer</a></h3>
+                        </div>
+                    </li>
+
+                    <li class=" momiq video videooverlay">
+                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
+
+                        <div class="caption">
+                            <h3><a href="burstmedia.com">MomIQ Video Overlay</a></h3>
+                        </div>
+                    </li>
+
+                    <li class=" ella mobile floatoverlay">
+                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
+
+                        <div class="caption">
+                            <h3><a href="burstmedia.com">Ella Mobile Float/Overlay</a></h3>
+                        </div>
+                    </li>
+
+                    <li class=" ella display peelback">
+                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
+
+                        <div class="caption">
+                            <h3><a href="burstmedia.com">Ella Peelback</a></h3>
+                        </div>
+                    </li>
+
+                    <li class=" ella video preroll">
+                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
+
+                        <div class="caption">
+                            <h3><a href="burstmedia.com">Ella Preroll</a></h3>
+                        </div>
+                    </li>
+
+                    <li class=" giantrealm display interstitial">
+                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
+
+                        <div class="caption">
+                            <h3><a href="burstmedia.com">Giant Realm Interstitial</a></h3>
+                        </div>
+                    </li>
+
+                    <li class=" giantrealm display expandable">
+                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
+
+                        <div class="caption">
+                            <h3><a href="burstmedia.com">Giant Realm Expandable</a></h3>
+                        </div>
+                    </li>
+
+                    <li class=" ella display skin">
+                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
+
+                        <div class="caption">
+                            <h3><a href="burstmedia.com">Ella Skin</a></h3>
+                        </div>
+                    </li>
+
+                    <li class=" momiq display tophat">
+                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
+
+                        <div class="caption">
+                            <h3><a href="burstmedia.com">MomIQ Top hat</a></h3>
+                        </div>
+                    </li>
+
+                    <li class=" giantrealm display toggle">
+                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
+
+                        <div class="caption">
+                            <h3><a href="burstmedia.com">Giant Realm Toggle Skin</a></h3>
+                        </div>
+                    </li>
+
+                    <li class=" ella display sequential">
+                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
+
+                        <div class="caption">
+                            <h3><a href="burstmedia.com">Ella Sequential Skin</a></h3>
+                        </div>
+                    </li>
+ 
+                </ul>
+            </div>
         </div>
 
-        <div class="menu">
-            <p class="menuheader">By Channel</p>
-            <ul>
-	            <li class="filter item" data-filter="gr">Giant Realm</li>
-			    <li class="filter item" data-filter="momiq">Momiq</li>
-			    <li class="filter item" data-filter="video">Ella</li>
-            </ul>
-        </div>
-
-        <div class="menu">
-            <p class="menuheader">By Feature</p>
-            <ul>
-	            <li class="filter item" data-filter="social">Social</li>
-			    <li class="filter item" data-filter="featurevideo">Video</li>
-			    <li class="filter item" data-filter="animation">Animation</li>
-			    <li class="filter item" data-filter="cta">Multiple CTA</li>
-			    <li class="filter item" data-filter="sponsoredcontent">Sponsored Content</li>
-            </ul>
-        </div>
-
-        <div class="menu">
-            <p class="menuheader">By Product Type</p>
-            <ul>
-	            <li class="filter item" data-filter="peelback">Peelback</li>
-			    <li class="filter item" data-filter="sidewalk">Sidewalk</li>
-			    <li class="filter item" data-filter="skin">Skin/Wallpaper</li>
-			    <li class="filter item" data-filter="expandable">Expandable</li>
-			    <li class="filter item" data-filter="float">Float/Overlay</li>
-			    <li class="filter item" data-filter="interstitial">Interstitial</li>
-			    <li class="filter item" data-filter="fixedfooter">Fixed Footer</li>
-			    <li class="filter item" data-filter="tophat">Top Hat Unit</li>
-            </ul>
-        </div>
-
-		<div class="clearFix"></div>
-
-	</div>
+           
+        <div class="clearboth"></div>
+    </div>
 
 </div>
 
-<br /><br />
+    <script src="js/jquery-1.10.1.min.js"></script>
+ 
+ <!-- scripts concatenated and minified via ant build script-->
+ <script src="js/plugins.js"></script>
+ <script src="js/script.js"></script>
+ 
+ </body>
 
-<div id="productWrapper">
-	<ul id="burstProducts">
-		<li class="mix display gr social fixedfooter" data-feature="video" data-type="FixedFooter">gr Fixed Footer</li>
-		<li class="mix display momiq featurevideo sponsoredcontent" data-feature="social" data-type="FixedFooter">momiq Social Influencer FF</li>
-		<li class="mix display ella animation float" data-feature="social" data-type="Float">ella Float/Overlay</li>
-		<li class="mix mobile momiq animation float" data-feature="social" data-type="Float">momiq Mobile Overlay</li>
-		<li class="mix display ella featurevideo peelback" data-feature="social" data-feature="video" data-type="Peelback">ella Peelback</li>
-		<li class="mix display gr cta tophat" data-feature="social" data-feature="video" data-type="TopHat">gr Top Hat</li>
-		<li class="mix display momiq expandable" data-feature="social" data-feature="video" data-type="Expandable">momiq Expandable</li>
-		<li class="mix display momiq cta skin" data-feature="social" data-feature="video" data-type="Skin">momiq Skin</li>
-		<li class="mix display ella skin" data-feature="social" data-feature="video" data-type="Skin">ella Toggle Skin</li>
-		<li class="mix display gr sponsoredcontent skin" data-feature="social" data-feature="video" data-type="Skin">gr Sequential Skin</li>
-		<li class="mix mobile gr featurevideo sidewalk" data-feature="social" data-feature="storelocator" data-type="Sidewalk">gr Sidewalk Unit</li>
-		<li class="mix video gr featurevideo animation" data-feature="social" data-type="Preroll">gr Preroll Unit</li>
-		<li class="mix video momiq" data-feature="social" data-type="Overlay">momiq Video Overlay</li>
-	</ul>
-</div>
-
-</body>
 </html>
