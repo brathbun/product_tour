@@ -1,240 +1,190 @@
-<!doctype html>  
- 
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Burst Product Tour</title>
- 
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <script src="js/jquery-min.js" type="text/javascript"></script>
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
-  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-
-  <!-- CSS : implied media="all" -->
-  <link rel="stylesheet" href="css/style.css?v=2">
-  
-  
-  <link href='http://fonts.googleapis.com/css?family=Lora&v2' rel='stylesheet' type='text/css'>
-
-  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
- <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
- 
-  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-  <script src="../js/modernizr-2.6.2.min.js"></script>
- 
-
- 
-  </head>
-
-<body>
-<div id="container" class="entry">
-   
-
-    <div id="main">
-        <div class="gradup">
-            <div class="onethird plus right">
-
-                <h3>Refine your Search</h3>
-                <ul class="filters showall">
-                    <li><input type="checkbox" id="filterIDall" value="all" class="dynamicFilterInput"><label for="filterIDall">All</label></li>
-                </ul>
-
-        <h5>Channel</h5>
-
-        <ul class="filters">
-          <li><input type="checkbox" id="filterIDmomiq" value="momiq" class="dynamicFilterInput"><label for="filterIDmomiq">MomIQ</label></li>
-          <li><input type="checkbox" id="filterIDella" value="ella" class="dynamicFilterInput"><label for="filterIDella">Ella</label></li>
-          <li><input type="checkbox" id="filterIDgiantrealm" value="giantrealm" class="dynamicFilterInput"><label for="filterIDgiantrealm">Giant Realm</label></li>
-          <li><input type="checkbox" id="filterIDstadium" value="stadium" class="dynamicFilterInput"><label for="filterIDstadium">Stadium</label></li>
-        </ul>
-
-        <h5>Medium</h5>
-
-        <ul class="filters">
-          <li><input type="checkbox" id="filterIDdisplay" value="display" class="dynamicFilterInput"><label for="filterIDdisplay">Display</label></li>
-          <li><input type="checkbox" id="filterIDmobile" value="mobile" class="dynamicFilterInput"><label for="filterIDmobile">Mobile</label></li>
-          <li><input type="checkbox" id="filterIDvideo" value="video" class="dynamicFilterInput"><label for="filterIDvideo">Video</label></li>
-        </ul>
-
-        <h5>Product Type</h5>
+        <script src="js/jquery.quicksand.min.js" type="text/javascript"></script>
+        <script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
         
-        <ul class="filters">
-          <li><input type="checkbox" id="filterIDfixedfooter" value="fixedfooter" class="dynamicFilterInput"><label for="filterIDfixedfooter">Fixed Footer</label></li>
-          <li><input type="checkbox" id="filterIDfloatoverlay" value="floatoverlay" class="dynamicFilterInput"><label for="filterIDfloatoverlay">Float/Overlay</label></li>
-          <li><input type="checkbox" id="filterIDpeelback" value="peelback" class="dynamicFilterInput"><label for="filterIDpeelback">Peelback</label></li>
-          <li><input type="checkbox" id="filterIDexpandable" value="expandable" class="dynamicFilterInput"><label for="filterIDexpandable">Expandable</label></li>
-          <li><input type="checkbox" id="filterIDtophat" value="tophat" class="dynamicFilterInput"><label for="filterIDtophat">Top Hat</label></li>
-          <li><input type="checkbox" id="filterIDinterstitial" value="interstitial" class="dynamicFilterInput"><label for="filterIDinterstitial">Interstitial</label></li>
-          <li><input type="checkbox" id="filterIDsidewalk" value="sidewalk" class="dynamicFilterInput"><label for="filterIDsidewalk">Sidewalk</label></li>
-          <li><input type="checkbox" id="filterIDskin" value="skin" class="dynamicFilterInput"><label for="filterIDskin">Skin/Wallpaper</label></li>
-          <li><input type="checkbox" id="filterIDsequential" value="sequential" class="dynamicFilterInput"><label for="filterIDsequential">Sequential Skin/Wallpaper</label></li>
-          <li><input type="checkbox" id="filterIDtoggle" value="toggle" class="dynamicFilterInput"><label for="filterIDtoggle">Toggle Skin/Wallpaper</label></li>
-          <li><input type="checkbox" id="filterIDvideooverlay" value="videooverlay" class="dynamicFilterInput"><label for="filterIDvideooverlay">Video Overlay</label></li>
-          <li><input type="checkbox" id="filterIDpreroll" value="preroll" class="dynamicFilterInput"><label for="filterIDpreroll">Pre-roll Video</label></li>
-        </ul>
+        <script type="text/javascript">
+            // DOMContentLoaded
+            $(function() {
+                // bind dropdowns in the form
+                var $filterchannel = $('#filter select[name="channel"]');
+                var $filtermedium = $('#filter select[name="medium"]');
+                var $filterproduct = $('#filter select[name="product"]');
 
-                <div class="filterThis"></div>
+                // get the first collection
+                var $applications = $('#applications');
+
+                // clone applications to get a second collection
+                var $data = $applications.clone();
+
+                // attempt to call Quicksand on every form change
+                $('select').change(
+                    function() {
+                        $(this).addClass('animate');
+                        if ($($filterchannel).val() == '0'){
+                            if ($($filtermedium).val() == '0'){
+                                if ($($filterproduct).val() == '0'){
+                                    //0-0-0
+                                    var $filteredData = $data.find('div');
+                                } else {
+                                    //0-0-1
+                                    var $filteredData = $data.find('div[data-product=' + $($filterproduct).val() + ']' );
+                                }
+                            } else {
+                                if ($($filterproduct).val() == '0'){
+                                    //0-1-0
+                                    var $filteredData = $data.find('div[data-medium=' + $($filtermedium).val() + ']' );
+                                } else {
+                                    //0-1-1
+                                    var $filteredData = $data.find('div[data-medium=' + $($filtermedium).val() + ']' + 'div[data-product=' + $($filterproduct).val() + ']');
+                                }
+                            }
+                        } else {
+                            if ($($filtermedium).val() == '0'){
+                                if ($($filterproduct).val() == '0'){
+                                    //1-0-0
+                                    var $filteredData = $data.find('div[data-channel=' + $($filterchannel).val() + ']' );
+                                } else {
+                                    //1-0-1
+                                    var $filteredData = $data.find('div[data-channel=' + $($filterchannel).val() + ']' + 'div[data-product=' + $($filterproduct).val() + ']');
+                                }
+                            } else {
+                                if ($($filterproduct).val() == '0'){
+                                    //1-1-0
+                                    var $filteredData = $data.find('div[data-channel=' + $($filterchannel).val() + ']' + 'div[data-medium=' + $($filtermedium).val() + ']');
+                                } else {
+                                    //1-1-1
+                                    var $filteredData = $data.find('div[data-channel=' + $($filterchannel).val() + ']' + 'div[data-medium=' + $($filtermedium).val() + ']' + 'div[data-product=' + $($filterproduct).val() + ']');
+                                }
+                            }
+                        }
+                        
+                        // finally, call quicksand
+                        $applications.quicksand($filteredData, {
+                            duration: 1000,
+                            easing: 'easeInOutQuad',
+                            adjustHeight:   'auto'
+                    });
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <form id="filter">
+            <select name="channel">
+                <option value="0">All Channels</option>
+                <option value="1">MomIQ</option>
+                <option value="2">Ella</option>
+                <option value="3">Giant Realm</option>
+            </select>
+            <select name="medium">
+                <option value="0">All Mediums</option>
+                <option value="1">Display</option>
+                <option value="2">Mobile</option>
+                <option value="3">Video</option>
+                <option value="4">Social</option>
+                <option value="5">Sponsored Post</option>
+            </select>
+            <select name="product">
+                <option value="0">All Products</option>
+                <option value="1">Skin/Wallpaper</option>
+                <option value="3">Sequential Skin/Wallpaper</option>
+                <option value="4">Toggle Skin/Wallpaper</option>
+                <option value="5">Expandable</option>
+                <option value="6">Peelback</option>
+                <option value="7">Fixed Footer</option>
+                <option value="8">Float/Overlay</option>
+                <option value="9">Top Hat</option>
+                <option value="10">Interstitial</option>
+                <option value="11">Sidewalk</option>
+                <option value="12">Sponsored Blog Post</option>
+                <option value="14">Video Overlay</option>
+                <option value="15">Pre-roll Video</option>
+            </select>
+        </form>
+        <div id="applications" class="image-grid">
+            <div class="animate" data-id="id-1" data-channel="2" data-medium="1" data-product="1">
+                Ella<br />Red<br />Couche
             </div>
-
-            <div class="twothird plus left">
-                <h2>Burst Executions</h2>
-         
-
-                <div id="post-12" class="post-12 page type-page status-publish hentry">
-                    <div class="entry-made played">
-                        <p>Oh no!  You've filtered too much!</p>
-                    </div>
-                </div>
-                                       
-                <div class="entry-made">
-                
-                <!-- Initial Displays -->               
-        
-                    <ul id="holder-init" class="filterThis showThis">
-                        <li class=" momiq display fixedfooter">
-                            <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
-
-                            <div class="caption">
-                                <h3><a href="burstmedia.com">MomIQ Fixed Footer</a></h3>
-                            </div>
-                        </li>
-
-                        <li class=" giantrealm mobile fixedfooter">
-                            <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
-
-                            <div class="caption">
-                                <h3><a href="burstmedia.com">Giant Realm Fixed Footer</a></h3>
-                            </div>
-                        </li>
-
-                        <li class=" ella video preroll">
-                            <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
-
-                            <div class="caption">
-                                <h3><a href="burstmedia.com">Ella Preroll</a></h3>
-                            </div>
-                        </li>
-
-                    </ul>  
-                </div>
-            <!-- End Initial Display -->
-
-            <div id="holderwrap">
-
-                <ul id="holder" class="filterThis">
-                    
-                    <li class=" momiq display fixedfooter">
-                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
-
-                        <div class="caption">
-                            <h3><a href="burstmedia.com">MomIQ Display Fixed Footer</a></h3>
-                        </div>
-                    </li>
-
-                    <li class=" momiq video videooverlay">
-                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
-
-                        <div class="caption">
-                            <h3><a href="burstmedia.com">MomIQ Video Overlay</a></h3>
-                        </div>
-                    </li>
-
-                    <li class=" ella mobile floatoverlay">
-                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
-
-                        <div class="caption">
-                            <h3><a href="burstmedia.com">Ella Mobile Float/Overlay</a></h3>
-                        </div>
-                    </li>
-
-                    <li class=" ella display peelback">
-                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
-
-                        <div class="caption">
-                            <h3><a href="burstmedia.com">Ella Peelback</a></h3>
-                        </div>
-                    </li>
-
-                    <li class=" ella video preroll">
-                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
-
-                        <div class="caption">
-                            <h3><a href="burstmedia.com">Ella Preroll</a></h3>
-                        </div>
-                    </li>
-
-                    <li class=" giantrealm display interstitial">
-                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
-
-                        <div class="caption">
-                            <h3><a href="burstmedia.com">Giant Realm Interstitial</a></h3>
-                        </div>
-                    </li>
-
-                    <li class=" giantrealm display expandable">
-                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
-
-                        <div class="caption">
-                            <h3><a href="burstmedia.com">Giant Realm Expandable</a></h3>
-                        </div>
-                    </li>
-
-                    <li class=" ella display skin">
-                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
-
-                        <div class="caption">
-                            <h3><a href="burstmedia.com">Ella Skin</a></h3>
-                        </div>
-                    </li>
-
-                    <li class=" momiq display tophat">
-                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
-
-                        <div class="caption">
-                            <h3><a href="burstmedia.com">MomIQ Top hat</a></h3>
-                        </div>
-                    </li>
-
-                    <li class=" giantrealm display toggle">
-                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
-
-                        <div class="caption">
-                            <h3><a href="burstmedia.com">Giant Realm Toggle Skin</a></h3>
-                        </div>
-                    </li>
-
-                    <li class=" ella display sequential">
-                        <a href="burstmedia.com"><img src="images/testimage-smaller.jpg" alt="blog post" /></a>
-
-                        <div class="caption">
-                            <h3><a href="burstmedia.com">Ella Sequential Skin</a></h3>
-                        </div>
-                    </li>
- 
-                </ul>
+            <div class="animate" data-id="id-2" data-channel="1" data-medium="2" data-product="2">
+                MomIQ<br />Red<br />Table
             </div>
-        </div>
+            <div class="animate" data-id="id-3" data-channel="1" data-medium="3" data-product="3">
+                MomIQ<br />Green<br />Couche
+            </div>
+            <div class="animate" data-id="id-4" data-channel="2" data-medium="1" data-product="1">
+                Ella<br />Red<br />Couche
+            </div>
+            <div class="animate" data-id="id-5" data-channel="1" data-medium="4" data-product="6">
+                MomIQ<br />Green<br />Table
+            </div>
+            <div class="animate" data-id="id-6" data-channel="1" data-medium="5" data-product="1">
+                MomIQ<br />Red<br />Couche
+            </div>
+            <div class="animate" data-id="id-7" data-channel="1" data-medium="1" data-product="7">
+                MomIQ<br />Green<br />Table
+            </div>
+            <div class="animate" data-id="id-8" data-channel="1" data-medium="2" data-product="1">
+                MomIQ<br />Green<br />Couche
+            </div>
+            <div class="animate" data-id="id-9" data-channel="1" data-medium="3" data-product="2">
+                MomIQ<br />Red<br />Table
+            </div>
+            <div class="animate" data-id="id-10" data-channel="2" data-medium="4" data-product="9">
+                Ella<br />Red<br />Couche
+            </div>
+            <div class="animate" data-id="id-11" data-channel="2" data-medium="5" data-product="4">
+                Ella<br />Green<br />Table
+            </div>
+            <div class="animate" data-id="id-12" data-channel="3" data-medium="2" data-product="2">
+                Giant Realm<br />Green<br />Table
+            </div>
+            <div class="animate" data-id="id-13" data-channel="3" data-medium="1" data-product="7">
+                Giant Realm<br />Red<br />Table
+            </div>
+            <div class="animate" data-id="id-13" data-channel="3" data-medium="3" data-product="11">
+                Giant Realm<br />Red<br />Table
+            </div>
+            <div class="animate" data-id="id-13" data-channel="3" data-medium="4" data-product="12">
+                Giant Realm<br />Red<br />Table
+            </div>
+            <div class="animate" data-id="id-13" data-channel="3" data-medium="1" data-product="5">
+                Giant Realm<br />Red<br />Table
+            </div>
+        </div>  
 
-           
-        <div class="clearboth"></div>
-    </div>
 
-</div>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
 
-    <script src="js/jquery-1.10.1.min.js"></script>
- 
- <!-- scripts concatenated and minified via ant build script-->
- <script src="js/plugins.js"></script>
- <script src="js/script.js"></script>
- 
- </body>
-
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
 </html>
