@@ -14,82 +14,21 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/modal.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
         <script src="js/jquery.quicksand.min.js" type="text/javascript"></script>
         <script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
-        
-        <script type="text/javascript">
-            // DOMContentLoaded
-            $(function() {
-                // bind dropdowns in the form
-                var $filterchannel = $('#filter select[name="channel"]');
-                var $filtermedium = $('#filter select[name="medium"]');
-                var $filterproduct = $('#filter select[name="product"]');
-
-                // get the first collection
-                var $applications = $('#applications');
-
-                // clone applications to get a second collection
-                var $data = $applications.clone();
-
-                // attempt to call Quicksand on every form change
-                $('select').change(
-                    function() {
-                        $(this).addClass('animate');
-                        if ($($filterchannel).val() == '0'){
-                            if ($($filtermedium).val() == '0'){
-                                if ($($filterproduct).val() == '0'){
-                                    //0-0-0
-                                    var $filteredData = $data.find('div');
-                                } else {
-                                    //0-0-1
-                                    var $filteredData = $data.find('div[data-product=' + $($filterproduct).val() + ']' );
-                                }
-                            } else {
-                                if ($($filterproduct).val() == '0'){
-                                    //0-1-0
-                                    var $filteredData = $data.find('div[data-medium=' + $($filtermedium).val() + ']' );
-                                } else {
-                                    //0-1-1
-                                    var $filteredData = $data.find('div[data-medium=' + $($filtermedium).val() + ']' + 'div[data-product=' + $($filterproduct).val() + ']');
-                                }
-                            }
-                        } else {
-                            if ($($filtermedium).val() == '0'){
-                                if ($($filterproduct).val() == '0'){
-                                    //1-0-0
-                                    var $filteredData = $data.find('div[data-channel=' + $($filterchannel).val() + ']' );
-                                } else {
-                                    //1-0-1
-                                    var $filteredData = $data.find('div[data-channel=' + $($filterchannel).val() + ']' + 'div[data-product=' + $($filterproduct).val() + ']');
-                                }
-                            } else {
-                                if ($($filterproduct).val() == '0'){
-                                    //1-1-0
-                                    var $filteredData = $data.find('div[data-channel=' + $($filterchannel).val() + ']' + 'div[data-medium=' + $($filtermedium).val() + ']');
-                                } else {
-                                    //1-1-1
-                                    var $filteredData = $data.find('div[data-channel=' + $($filterchannel).val() + ']' + 'div[data-medium=' + $($filtermedium).val() + ']' + 'div[data-product=' + $($filterproduct).val() + ']');
-                                }
-                            }
-                        }
-                        
-                        // finally, call quicksand
-                        $applications.quicksand($filteredData, {
-                            duration: 1000,
-                            easing: 'easeInOutQuad',
-                            adjustHeight:   'auto'
-                    });
-                });
-            });
-        </script>
 
     </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+<body>
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <header></header>
+
+    <div class="wrapper">
 
         <form id="filter">
             <select name="channel">
@@ -173,18 +112,36 @@
                 Giant Realm<br />Red<br />Table
             </div>
         </div>  
+    </div><!--wrapper-->
 
+    <a href="#oldshit">Old</a>
 
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+    <a href="#newshit">New</a>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
+    <section class="semantic-content" id="newshit" tabindex="-1">
+
+        <div class="modal-inner">
+            <header id="modal-label"><!-- Header --></header>
+            <div class="modal-content">New Shit</div>
+            <footer><!-- Footer --></footer>
+        </div>
+
+        <a href="#!" class="modal-close" title="Close this modal" data-close="Close" data-dismiss="modal">×</a>
+    </section>
+
+    <section class="semantic-content" id="oldshit" tabindex="-1">
+
+        <div class="modal-inner">
+            <header id="modal-label"><!-- Header --></header>
+            <div class="modal-content">Old Shit</div>
+            <footer><!-- Footer --></footer>
+        </div>
+
+        <a href="#!" class="modal-close" title="Close this modal" data-close="Close" data-dismiss="modal">×</a>
+    </section>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
 </html>
