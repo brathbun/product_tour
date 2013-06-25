@@ -3,145 +3,205 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <script src="js/jquery-min.js" type="text/javascript"></script>
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/modal.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <script src="js/jquery.quicksand.min.js" type="text/javascript"></script>
-        <script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
-    </head>
+</head>
 <body>
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
+<div id="wrapper">
+    
+    <div class="navfilters">
+        <select class="value1">
+            <option value="allchannels">All Channels</option>
+            <option value="momiq">MomIQ</option>
+            <option value="ella">Ella</option>
+            <option value="gr">Giant Realm</option>
+        </select>
 
-    <header></header>
+        <select class="value2">
+            <option value="allmediums">All Mediums</option>
+            <option value="display">Display</option>
+            <option value="mobile">Mobile</option>
+            <option value="video">Video</option>
+            <option value="social">Social</option>
+            <option value="sponsored">Sponsored Post</option>
+        </select>
 
-    <div class="wrapper">
+        <select class="value3">
+            <option value="allproducts">All Products</option>
+            <option value="skin">Skin/Wallpaper</option>
+            <option value="sequential">Sequential Skin/Wallpaper</option>
+            <option value="toggle">Toggle Skin/Wallpaper</option>
+            <option value="expandable">Expandable</option>
+            <option value="peelback">Peelback</option>
+            <option value="fixedfooter">Fixed Footer</option>
+            <option value="float">Float/Overlay</option>
+            <option value="tophat">Top Hat</option>
+            <option value="interstitial">Interstitial</option>
+            <option value="sidewalk">Sidewalk</option>
+            <option value="videooverlay">Video Overlay</option>
+            <option value="preroll">Pre-roll Video</option>
+        </select>
+    </div>
 
-        <form id="filter">
-            <select name="channel">
-                <option value="0">All Channels</option>
-                <option value="1">MomIQ</option>
-                <option value="2">Ella</option>
-                <option value="3">Giant Realm</option>
-            </select>
-            <select name="medium">
-                <option value="0">All Mediums</option>
-                <option value="1">Display</option>
-                <option value="2">Mobile</option>
-                <option value="3">Video</option>
-                <option value="4">Social</option>
-                <option value="5">Sponsored Post</option>
-            </select>
-            <select name="product">
-                <option value="0">All Products</option>
-                <option value="1">Skin/Wallpaper</option>
-                <option value="3">Sequential Skin/Wallpaper</option>
-                <option value="4">Toggle Skin/Wallpaper</option>
-                <option value="5">Expandable</option>
-                <option value="6">Peelback</option>
-                <option value="7">Fixed Footer</option>
-                <option value="8">Float/Overlay</option>
-                <option value="9">Top Hat</option>
-                <option value="10">Interstitial</option>
-                <option value="11">Sidewalk</option>
-                <option value="12">Sponsored Blog Post</option>
-                <option value="14">Video Overlay</option>
-                <option value="15">Pre-roll Video</option>
-            </select>
-        </form>
-        <div id="applications" class="image-grid">
-            <div class="animate" data-id="id-1" data-channel="2" data-medium="1" data-product="1">
-                Ella<br />Red<br />Couche
-            </div>
-            <div class="animate" data-id="id-2" data-channel="1" data-medium="2" data-product="2">
-                MomIQ<br />Red<br />Table
-            </div>
-            <div class="animate" data-id="id-3" data-channel="1" data-medium="3" data-product="3">
-                MomIQ<br />Green<br />Couche
-            </div>
-            <div class="animate" data-id="id-4" data-channel="2" data-medium="1" data-product="1">
-                Ella<br />Red<br />Couche
-            </div>
-            <div class="animate" data-id="id-5" data-channel="1" data-medium="4" data-product="6">
-                MomIQ<br />Green<br />Table
-            </div>
-            <div class="animate" data-id="id-6" data-channel="1" data-medium="5" data-product="1">
-                MomIQ<br />Red<br />Couche
-            </div>
-            <div class="animate" data-id="id-7" data-channel="1" data-medium="1" data-product="7">
-                MomIQ<br />Green<br />Table
-            </div>
-            <div class="animate" data-id="id-8" data-channel="1" data-medium="2" data-product="1">
-                MomIQ<br />Green<br />Couche
-            </div>
-            <div class="animate" data-id="id-9" data-channel="1" data-medium="3" data-product="2">
-                MomIQ<br />Red<br />Table
-            </div>
-            <div class="animate" data-id="id-10" data-channel="2" data-medium="4" data-product="9">
-                Ella<br />Red<br />Couche
-            </div>
-            <div class="animate" data-id="id-11" data-channel="2" data-medium="5" data-product="4">
-                Ella<br />Green<br />Table
-            </div>
-            <div class="animate" data-id="id-12" data-channel="3" data-medium="2" data-product="2">
-                Giant Realm<br />Green<br />Table
-            </div>
-            <div class="animate" data-id="id-13" data-channel="3" data-medium="1" data-product="7">
-                Giant Realm<br />Red<br />Table
-            </div>
-            <div class="animate" data-id="id-13" data-channel="3" data-medium="3" data-product="11">
-                Giant Realm<br />Red<br />Table
-            </div>
-            <div class="animate" data-id="id-13" data-channel="3" data-medium="4" data-product="12">
-                Giant Realm<br />Red<br />Table
-            </div>
-            <div class="animate" data-id="id-13" data-channel="3" data-medium="1" data-product="5">
-                Giant Realm<br />Red<br />Table
-            </div>
-        </div>  
-    </div><!--wrapper-->
+    <!--<button class="filter">filter me</button>-->
 
-    <a href="#oldshit">Old</a>
-
-    <a href="#newshit">New</a>
-
-    <section class="semantic-content" id="newshit" tabindex="-1">
-
-        <div class="modal-inner">
-            <header id="modal-label"><!-- Header --></header>
-            <div class="modal-content">New Shit</div>
-            <footer><!-- Footer --></footer>
+    <div class="seachField">
+        <div class="searchTerm gr display skin">
+            <a href="#modal-1" class="fill-div">
+            <p>GR Display Skin</p>
+            <p>Click here for more information</p>
+            </a>
         </div>
 
-        <a href="#!" class="modal-close" title="Close this modal" data-close="Close" data-dismiss="modal">×</a>
-    </section>
-
-    <section class="semantic-content" id="oldshit" tabindex="-1">
-
-        <div class="modal-inner">
-            <header id="modal-label"><!-- Header --></header>
-            <div class="modal-content">Old Shit</div>
-            <footer><!-- Footer --></footer>
+        <div class="searchTerm gr mobile sequential">
+            <p>GR Mobile Sequential</p>
         </div>
 
-        <a href="#!" class="modal-close" title="Close this modal" data-close="Close" data-dismiss="modal">×</a>
-    </section>
+        <div class="searchTerm gr video toggle">
+            <p>GR Video toggle</p>
+        </div>
 
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+        <div class="searchTerm gr display skin">
+            <p>GR Social Skin</p>
+        </div>
+
+        <div class="searchTerm gr mobile expandable">
+            <p>GR Mobile Expandable</p>
+        </div>
+
+        <div class="searchTerm gr sponsored">
+            <p>GR Sponsored Post</p>
+        </div>
+
+        <div class="searchTerm momiq display peelback">
+            <p>MomIQ Display Peelback</p>
+        </div>
+
+        <div class="searchTerm momiq mobile fixedfooter">
+            <p>MomIQ Mobile Fixed Footer</p>
+        </div>
+
+        <div class="searchTerm momiq video float">
+            <p>MomIQ Video float</p>
+        </div>
+
+        <div class="searchTerm momiq display tophat">
+            <p>MomIQ Social Top Hat</p>
+        </div>
+
+        <div class="searchTerm momiq mobile sidewalk">
+            <p>MomIQ Mobile Sidewalk</p>
+        </div>
+
+        <div class="searchTerm momiq sponsored">
+            <p>MomIQ Sponsored Post</p>
+        </div>
+
+        <div class="searchTerm ella display skin">
+            <p>Ella Display Skin</p>
+        </div>
+
+        <div class="searchTerm ella mobile fixedfooter">
+            <p>Ella Mobile Fixed Footer</p>
+        </div>
+
+        <div class="searchTerm ella video preroll">
+            <p>Ella Video Preroll</p>
+        </div>
+
+        <div class="searchTerm ella social expandable">
+            <p>Ella Social Expandable</p>
+        </div>
+
+        <div class="searchTerm ella mobile float">
+            <p>Ella Mobile Float/Overlay</p>
+        </div>
+
+        <div class="searchTerm ella sponsored">
+            <p>Ella Sponsored Post</p>
+        </div>
+
+        <div class="searchTerm ella social peelback">
+            <p>Ella Social Peelback</p>
+        </div>
+    </div>
+    <div class="clearFix"></div>
+</div>
+
+
+
+<section class="semantic-content" id="modal-1" tabindex="-1"
+        role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+
+    <div class="modal-inner">
+        <header id="modal-label">Giant Realm World War Z Execution</header>
+            <div class="modal-content">
+                <div class="imgleft"></div>
+                <div class="txtright">GR Skin 1</div>
+                <div class="linkright">Click here for more info</div>
+            </div>
+        <footer><div class="GRlogo">Giant Realm Logo Here</div></footer>
+    </div>
+
+    <a href="#!" class="modal-close" title="Close this modal" data-close="Close"
+        data-dismiss="modal">×</a>
+</section>
+
+
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+    <script>
+
+        $('.searchTerm').addClass('allmediums');
+        $('.searchTerm').addClass('allproducts');
+        $('.searchTerm').addClass('allchannels');
+
+        function search(){
+            var val1 = $('select.value1 option:selected').val();
+            var val2 = $('select.value2 option:selected').val();
+            var val3 = $('select.value3 option:selected').val();
+
+            var queries = $('.searchTerm');
+            //console.log(queries)
+            console.log(val1,val2,val3);
+
+
+            console.log('aaaaa');
+
+            queries.each(function(){
+                if($(this).hasClass(val1) && $(this).hasClass(val2) && $(this).hasClass(val3)){
+                    //console.log('it has both values');
+                    //$(this).css('color','red');
+                    $(this).show();
+                }else{
+                    $(this).hide();
+                }
+            })
+        }
+        
+
+
+        $('.value1').change(search);
+        $('.value2').change(search);
+        $('.value3').change(search);
+
+    </script>
+
 
 </body>
 </html>

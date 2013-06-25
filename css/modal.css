@@ -1,4 +1,16 @@
-@charset "UTF-8";
+/*
+ * Tests for CSS Modal
+ * by @drublic - http://drublic.de/
+ *
+ * http://drublic.github.com/css-modal
+ */
+/**
+ * @include x-multiple-backgrounds(
+ *	rgba(0, 0, 0, 0.3),
+ *	url('../img/someImage.png') no-repeat,
+ *	('to bottom', #ddd, #aaa, #ddd)
+ * );
+ */
 /**
  * Modal as reusable module
  *
@@ -22,7 +34,7 @@ html {
   overflow-y: scroll;
 }
 
-.semantic-content {
+.semantic-content, ._modal {
   -webkit-transform: translate(0, 100%);
   -moz-transform: translate(0, 100%);
   -o-transform: translate(0, 100%);
@@ -41,7 +53,7 @@ html {
   line-height: 1.3;
   display: none\9;
 }
-.semantic-content:target {
+.semantic-content:target, ._modal:target {
   -webkit-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
   -o-transform: translate(0, 0);
@@ -49,13 +61,13 @@ html {
   transform: translate(0, 0);
   opacity: 1;
 }
-.is-active.semantic-content {
+.is-active.semantic-content, .is-active._modal {
   display: block\9;
 }
-.semantic-content:target {
+.semantic-content:target, ._modal:target {
   display: block\9;
 }
-.semantic-content .modal-inner {
+.semantic-content .modal-inner, ._modal .modal-inner {
   position: absolute;
   top: 50px;
   left: 50%;
@@ -68,25 +80,27 @@ html {
   -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
 }
-.semantic-content .modal-inner > img,
+.semantic-content .modal-inner > img, ._modal .modal-inner > img,
 .semantic-content .modal-inner > video,
-.semantic-content .modal-inner > iframe {
+._modal .modal-inner > video,
+.semantic-content .modal-inner > iframe,
+._modal .modal-inner > iframe {
   width: 100%;
   height: auto;
   min-height: 300px;
 }
-.semantic-content .modal-inner > img {
+.semantic-content .modal-inner > img, ._modal .modal-inner > img {
   width: auto;
   max-width: 100%;
 }
-.semantic-content header {
+.semantic-content header, ._modal header {
   border-bottom: 1px solid #dddddd;
   padding: 0 1.2em;
 }
-.semantic-content header > h2 {
+.semantic-content header > h2, ._modal header > h2 {
   margin: 0.5em 0;
 }
-.semantic-content .modal-content {
+.semantic-content .modal-content, ._modal .modal-content {
   max-height: 400px;
   max-height: 70vh;
   border-bottom: 1px solid #dddddd;
@@ -94,21 +108,21 @@ html {
   overflow-x: hidden;
   overflow-y: auto;
 }
-.semantic-content .modal-content > * {
+.semantic-content .modal-content > *, ._modal .modal-content > * {
   max-width: 100%;
 }
-.semantic-content footer {
+.semantic-content footer, ._modal footer {
   border-top: 1px solid white;
   padding: 0 1.2em 18px;
   background: #f0f0f0;
   border-radius: 2px;
 }
-.semantic-content .modal-close {
+.semantic-content .modal-close, ._modal .modal-close {
   display: block;
   text-indent: -100px;
   overflow: hidden;
 }
-.semantic-content .modal-close:before {
+.semantic-content .modal-close:before, ._modal .modal-close:before {
   content: '';
   position: absolute;
   top: 0;
@@ -118,8 +132,8 @@ html {
   z-index: 10;
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAEElEQVR42gEFAPr/AAAAAMwA0QDNTiUx4gAAAABJRU5ErkJggg==");
 }
-.semantic-content .modal-close:after {
-  content: '×';
+.semantic-content .modal-close:after, ._modal .modal-close:after {
+  content: '\00d7';
   position: absolute;
   top: 25px;
   left: 50%;
@@ -133,23 +147,23 @@ html {
   text-indent: 0;
 }
 @media screen and (max-width: 690px) {
-  .semantic-content .modal-inner {
+  .semantic-content .modal-inner, ._modal .modal-inner {
     width: auto;
     left: 20px;
     right: 20px;
     margin-left: 0;
   }
-  .semantic-content .modal-close {
+  .semantic-content .modal-close, ._modal .modal-close {
     left: auto;
     right: 33px;
     margin-left: 0;
   }
-  .semantic-content .modal-close:after {
+  .semantic-content .modal-close:after, ._modal .modal-close:after {
     margin-left: 40%;
   }
 }
 @media screen and (max-width: 30em) {
-  .semantic-content {
+  .semantic-content, ._modal {
     -webkit-transform: translate(0, 400px);
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
@@ -162,14 +176,14 @@ html {
     height: 100%;
     bottom: auto;
   }
-  .semantic-content:target {
+  .semantic-content:target, ._modal:target {
     -webkit-transition: -webkit-transform .25s ease-in-out;
     -moz-transition: -moz-transform .25s ease-in-out;
     -o-transition: -o-transform .25s ease-in-out;
     -ms-transition: -ms-transform .25s ease-in-out;
     transition: transform .25s ease-in-out;
   }
-  .semantic-content:before {
+  .semantic-content:before, ._modal:before {
     background-color: #27aae2;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#27aae2), to(#1c9cd3));
     background-image: -webkit-linear-gradient(top, #27aae2, #1c9cd3);
@@ -186,7 +200,7 @@ html {
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
   }
-  .semantic-content .modal-inner {
+  .semantic-content .modal-inner, ._modal .modal-inner {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -199,17 +213,17 @@ html {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
-  .semantic-content .modal-content {
+  .semantic-content .modal-content, ._modal .modal-content {
     max-height: none;
   }
-  .semantic-content .modal-close {
+  .semantic-content .modal-close, ._modal .modal-close {
     right: auto;
     text-decoration: none;
   }
-  .semantic-content .modal-close:before {
+  .semantic-content .modal-close:before, ._modal .modal-close:before {
     display: none;
   }
-  .semantic-content .modal-close:after {
+  .semantic-content .modal-close:after, ._modal .modal-close:after {
     content: attr(data-close);
     top: 0.4em;
     left: 1em;
@@ -220,15 +234,15 @@ html {
   }
 }
 @media screen and (max-height: 46em) and (min-width: 30em) {
-  .semantic-content .modal-content {
+  .semantic-content .modal-content, ._modal .modal-content {
     max-height: 340px;
     max-height: 50vh;
   }
 }
 @media screen and (max-height: 36em) and (min-width: 30em) {
-  .semantic-content .modal-content {
+  .semantic-content .modal-content, ._modal .modal-content {
     max-height: 265px;
-    max-height: 40vh;
+    max-height: 50vh;
   }
 }
 
