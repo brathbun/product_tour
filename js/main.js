@@ -1,1 +1,4 @@
 
+obj = {
+	hello: "aaa"
+}
