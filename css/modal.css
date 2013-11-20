@@ -69,11 +69,10 @@ html {
 }
 .semantic-content .modal-inner, ._modal .modal-inner {
   position: absolute;
-  top: 50px;
-  left: 50%;
+  top: 55px;
+  left: 10%;
   z-index: 20;
-  margin-left: -325px;
-  width: 650px;
+  width: 80%;
   overflow-x: hidden;
   border-radius: 2px;
   background: #fff;
@@ -94,8 +93,10 @@ html {
   max-width: 100%;
 }
 .semantic-content header, ._modal header {
-  border-bottom: 1px solid #dddddd;
-  padding: 0 1.2em;
+  border-bottom: 1px solid #ddd;
+  border-radius: 2px;
+  padding: 0 1.2em;  
+  background: #fde509;
 }
 .semantic-content header > h2, ._modal header > h2 {
   margin: 0.5em 0;
@@ -114,7 +115,7 @@ html {
 .semantic-content footer, ._modal footer {
   border-top: 1px solid white;
   padding: 0 1.2em 18px;
-  background: #f0f0f0;
+  background: #ddd;
   border-radius: 2px;
 }
 .semantic-content .modal-close, ._modal .modal-close {
@@ -136,9 +137,8 @@ html {
   content: '\00d7';
   position: absolute;
   top: 25px;
-  left: 50%;
+  left: 11%;
   z-index: 20;
-  margin-left: 285px;
   background: #fff;
   border-radius: 2px;
   padding: 2px 8px;
@@ -159,7 +159,7 @@ html {
     margin-left: 0;
   }
   .semantic-content .modal-close:after, ._modal .modal-close:after {
-    margin-left: 40%;
+    margin-left: 0;
   }
 }
 @media screen and (max-width: 30em) {
@@ -184,7 +184,7 @@ html {
     transition: transform .25s ease-in-out;
   }
   .semantic-content:before, ._modal:before {
-    background-color: yellow;
+    background-color: #fde509;
     content: '';
     position: fixed;
     top: 0;

@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
+    <title>Burst Media Product Tour</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/productDisplay.css">
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
 <script type="text/javascript" src="//use.typekit.net/lzo5qyb.js"></script>
@@ -25,48 +26,74 @@
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
-<div id="wrapper">
-    <div class="header"></div>
+<div class="header">
+    <div class="logoWrap">
+        <div class="logo">
+            <img src="img/burstlogo.png" />
+            <p>Product Tour</p>
+        </div>
+    </div>
+</div>
+    
     <div class="navfilters">
-        <select class="value1">
-            <option value="allchannels">All Channels</option>
-            <option value="momiq">MomIQ</option>
-            <option value="ella">Ella</option>
-            <option value="gr">Giant Realm</option>
-        </select>
+        <label>
+            <select class="value1">
+                <option value="allchannels">All Channels</option>
+                <option value="momiq">MomIQ</option>
+                <option value="ella">Ella</option>
+                <option value="gr">Giant Realm</option>
+            </select>
+        </label>
 
-        <select class="value2">
-            <option value="allmediums">All Mediums</option>
-            <option value="display">Display</option>
-            <option value="mobile">Mobile</option>
-            <option value="video">Video</option>
-            <option value="social">Social</option>
-            <option value="sponsored">Sponsored Post</option>
-        </select>
+        <label>
+            <select class="value2">
+                <option value="allmediums">All Mediums</option>
+                <option value="display">Display</option>
+                <option value="mobile">Mobile</option>
+                <option value="video">Video</option>
+                <option value="social">Social</option>
+                <option value="sponsored">Sponsored Post</option>
+            </select>
+        </label>
 
-        <select class="value3">
-            <option value="allproducts">All Products</option>
-            <option value="skin">Skin/Wallpaper</option>
-            <option value="sequential">Sequential Skin/Wallpaper</option>
-            <option value="toggle">Toggle Skin/Wallpaper</option>
-            <option value="expandable">Expandable</option>
-            <option value="peelback">Peelback</option>
-            <option value="fixedfooter">Fixed Footer</option>
-            <option value="float">Float/Overlay</option>
-            <option value="tophat">Top Hat</option>
-            <option value="interstitial">Interstitial</option>
-            <option value="sidewalk">Sidewalk</option>
-            <option value="videooverlay">Video Overlay</option>
-            <option value="preroll">Pre-roll Video</option>
-        </select>
+        <label>
+            <select class="value3">
+                <option value="allproducts">All Products</option>
+                <option value="skin">Skin/Wallpaper</option>
+                <option value="sequential">Sequential Skin/Wallpaper</option>
+                <option value="toggle">Toggle Skin/Wallpaper</option>
+                <option value="expandable">Expandable</option>
+                <option value="peelback">Peelback</option>
+                <option value="fixedfooter">Fixed Footer</option>
+                <option value="float">Float/Overlay</option>
+                <option value="tophat">Top Hat</option>
+                <option value="interstitial">Interstitial</option>
+                <option value="sidewalk">Sidewalk</option>
+                <option value="videooverlay">Video Overlay</option>
+                <option value="preroll">Pre-roll Video</option>
+            </select>
+        </label>
+
+        <label>
+            <select class="value4">
+                <option value="allfunctions">All Functions</option>
+                <option value="socialenabled">Social Enabled</option>
+                <option value="videoenabled">Video Enabled</option>
+                <option value="mctas">Multiple CTAs</option>
+                <option value="animated">Animated</option>
+                <option value="contenttab">Content Tab</option>
+            </select>
+        </label>
+
     </div>
 
-    <!--<button class="filter">filter me</button>-->
-
+<div class="clearFix"></div>
+<div id="wrapper">
+    
     <div class="seachField">
-        <div class="searchTerm gr display skin">
+        <div class="searchTerm proj01 gr display skin">
             <a href="#modal-1" class="fill-div">
-            <div class="fieldHeader">GR Display Skin</div>
+            <div class="fieldHeader">Giant Realm - World War Z Takeover</div>
             <div class="fieldFooter">Explore this Unit</div>
             </a>
         </div>
@@ -164,27 +191,26 @@
     <div class="clearFix"></div>
 </div>
 
-
+<!-- Modal Unit Pages -->
 
 <section class="semantic-content" id="modal-1" tabindex="-1"
         role="dialog" aria-labelledby="modal-label" aria-hidden="true">
 
     <div class="modal-inner">
-        <header id="modal-label"><h1>Giant Realm World War Z Execution</h1></header>
-            <div class="modal-content">
-                <img src="img/fixedfooter.jpg"  alt="img" />
-                <p> consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dol. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <header id="modal-label"><h1>Giant Realm World War Z Execution</h1>
+        <p class="callout">Social | Video Enabled | Multiple CTAs | Animated | Custom Content Tab</p></header>
 
-                <a href="#" class="link"> click here for a dmoez</a>
-                <p class="callout">Social  |  Video Enabled  |  Multiple Click Throughs  |  Animated</p>
+            <div class="modal-content">
+                <p>Some incredibly awesome witty description if we want.</p>
+                <img src="img/units/gr_worldwarz_main.jpg"  alt="World War Z" />
+                <!-- <a href="#" class="link"> click here for a dmoez</a> -->
             </div>
-        <footer><div class="GRlogo">Giant Realm Logo Here</div></footer>
+        <footer><div class="footerLogo">Logo Here</div></footer>
     </div>
 
     <a href="#!" class="modal-close" title="Close this modal" data-close="Close"
         data-dismiss="modal">×</a>
 </section>
-
 
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 
@@ -193,23 +219,20 @@
         $('.searchTerm').addClass('allmediums');
         $('.searchTerm').addClass('allproducts');
         $('.searchTerm').addClass('allchannels');
+        $('.searchTerm').addClass('allfunctions');
 
         function search(){
             var val1 = $('select.value1 option:selected').val();
             var val2 = $('select.value2 option:selected').val();
             var val3 = $('select.value3 option:selected').val();
+            var val4 = $('select.value4 option:selected').val();
 
             var queries = $('.searchTerm');
-            //console.log(queries)
-            console.log(val1,val2,val3);
 
-
-            console.log('aaaaa');
+            console.log(val1,val2,val3,val4);
 
             queries.each(function(){
-                if($(this).hasClass(val1) && $(this).hasClass(val2) && $(this).hasClass(val3)){
-                    //console.log('it has both values');
-                    //$(this).css('color','red');
+                if($(this).hasClass(val1) && $(this).hasClass(val2) && $(this).hasClass(val3) && $(this).hasClass(val4)){
                     $(this).fadeIn();
                 }else{
                     $(this).fadeOut();
@@ -222,6 +245,7 @@
         $('.value1').change(search);
         $('.value2').change(search);
         $('.value3').change(search);
+        $('.value4').change(search);
 
     </script>
 
